@@ -1,9 +1,9 @@
 import time
 
 from redis import Redis
-from rq import Queue
+from rq import Queue, decorators
 
-from utils import func
+from utils import func, async_func
 
 
 def main() -> None:
@@ -17,3 +17,4 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
+    async_func.delay(10)
